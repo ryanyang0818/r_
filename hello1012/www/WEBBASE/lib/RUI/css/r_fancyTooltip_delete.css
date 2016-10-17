@@ -1,0 +1,47 @@
+.r_fancytooltip-container.fancybox-wrap .fancybox-skin {
+  background: #DDD; }
+.r_fancytooltip-container.fancybox-wrap .r_fancytooltip-innerContainer {
+  overflow-x: hidden;
+  overflow-y: hidden; }
+  .r_fancytooltip-container.fancybox-wrap .r_fancytooltip-innerContainer .r_fancytooltip-row {
+    overflow-x: auto;
+    border-top: 1px solid gray;
+    padding-top: 10px;
+    height: 122px; }
+    .r_fancytooltip-container.fancybox-wrap .r_fancytooltip-innerContainer .r_fancytooltip-row .r_fancytooltip-block {
+      text-align: center;
+      cursor: pointer;
+      display: table-cell;
+      padding-left: 10px;
+      height: 94px;
+      overflow: hidden; }
+    .r_fancytooltip-container.fancybox-wrap .r_fancytooltip-innerContainer .r_fancytooltip-row .r_fancytooltip-icon {
+      background: white;
+      width: 64px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: auto;
+      border-radius: 15px; }
+    .r_fancytooltip-container.fancybox-wrap .r_fancytooltip-innerContainer .r_fancytooltip-row .r_fancytooltip-text {
+      height: 30px;
+      overflow: hidden; }
+  .r_fancytooltip-container.fancybox-wrap .r_fancytooltip-innerContainer .r_fancytooltip-row:first-child {
+    border-top: none; }
+.r_fancytooltip-container.fancybox-wrap .r_fancytooltip-arrow.up {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-left: solid transparent 10px;
+  border-right: solid transparent 10px;
+  border-top: solid transparent 10px;
+  border-bottom: solid #DDD 10px; }
+.r_fancytooltip-container.fancybox-wrap .r_fancytooltip-arrow.down {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-left: solid transparent 10px;
+  border-right: solid transparent 10px;
+  border-bottom: solid transparent 10px;
+  border-top: solid #DDD 10px; }

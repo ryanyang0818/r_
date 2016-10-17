@@ -1,0 +1,31 @@
+
+$r_nav-li-H: 40 ;
+.r_navx {
+
+    >li.open {
+        border-left-color: white ;
+    }
+    
+    .dropdown-menu {
+        position: initial ;
+        width: 100%;
+        margin: 0 ;
+        background: transparent ;
+    }
+    
+    li {
+        height: #{$r_nav-li-H}px ;
+        border: 0px solid yellow ;
+        padding-left: 5px ;
+        border: 0;
+        border-left: 2px solid transparent;
+        border-left-color: transparent ;
+        clear: both;
+    }
+    
+    a {
+        height: #{$r_nav-li-H}px ;
+        line-height: #{$r_nav-li-H}px ;
+    }
+    
+}

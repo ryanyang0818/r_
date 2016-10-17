@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+<link rel="stylesheet" href="../lib/bootstrap-4-dev/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="../lib/font-awesome-4.6.3/css/font-awesome.min.css">
+<link rel="font/opentype" href="../lib/font-awesome-4.6.3/fonts/FontAwesome.otf">
+<link rel="font/opentype" href="../lib/font-awesome-4.6.3/fonts/fontawesome-webfont.eot">
+<link rel="font/opentype" href="../lib/font-awesome-4.6.3/fonts/fontawesome-webfont.svg">
+<link rel="font/opentype" href="../lib/font-awesome-4.6.3/fonts/fontawesome-webfont.ttf">
+<link rel="font/opentype" href="../lib/font-awesome-4.6.3/fonts/fontawesome-webfont.woff">
+<link rel="font/opentype" href="../lib/font-awesome-4.6.3/fonts/fontawesome-webfont.woff2">
+
+<link rel="stylesheet" href="../lib/RUI/css/r_dropdown.css">
+<link rel="stylesheet" href="../lib/RUI/css/r_loader.css">
+<link rel="stylesheet" href="../lib/RUI/css/r_slidepanel.css">
+<link rel="stylesheet" href="../lib/RUI/css/r_toast.css">
+<link rel="stylesheet" href="../lib/RUI/css/bootstrap.fix.css">
+<link rel="stylesheet" href="../css/views.pages.css">
+<link rel="stylesheet" href="../css/views.photo.css">
+
+<script src="../lib/jquery/jquery-2.2.1.min.js"></script>
+<script src="../lib/underscore/underscore-min.js"></script>
+<script src="../lib/backbone/backbone-min.js"></script>
+<script src="../lib/tether/tether.min.js"></script>
+<script src="../lib/bootstrap-4-dev/dist/js/bootstrap.min.js"></script>
+<script>
+$(function()
+{
+    $('.r_dropdown-toggler')
+    
+        .on('click', function(e) {
+            var $this = $(this) ;
+
+            var targetStr = $this.attr('r_dropdown-toggle-target') ;
+            
+            var targetSelector = $(targetStr) ;
+            
+            if (targetSelector.hasClass('open')) {
+                targetSelector.slideUp() ;
+                targetSelector.toggleClass('open') ;
+            } else {
+                targetSelector.slideDown(function() {
+                    targetSelector.toggleClass('open') ;
+                }) ;
+                
+            }
+        }) ;
+
+
+    $('.r_dropdown')
+    
+        .on('click', '.r_dropdown-menu, .r_dropdown-submenu', function(e) {
+            e.preventDefault() ;
+            e.stopPropagation() ;
+            
+            var $this = $(this) ;
+            
+            //$(this).toggleClass('open')
+            
+            if ($this.hasClass('open')) {
+                $this.find('>.r_dropdown-menu').slideUp(function() {
+                    $this.removeClass('open') ;
+                }) ;
+                
+            } else {
+                $this.find('>.r_dropdown-menu').slideDown() ;
+                $this.addClass('open') ;
+            }
+
+        })
+}) ;
+</script>
+</head>
+<body>
+<div id="WRAPPER_ALL">
+
+<div data-role="page" data-page-name="photo" class="container-fluid">
+
+    <nav class="row navigator">
+        <div class="col-xs-4 navigator-block navigator-block-left">
+            <span><i class="fa fa-angle-left fa-3x"></i></span>
+            <span>Menu</span>
+        </div>
+        <div class="col-xs-4 navigator-block navigator-block-center">
+            <span>標題</span>
+        </div>
+        <div class="col-xs-4 navigator-block navigator-block-right">
+            <span>Edit</span>
+        </div>
+    </nav>   
+
+    <hr>
+    
+    <nav class="row navigator">
+        <div class="col-xs-4 navigator-block navigator-block-left">
+            <span><i class="fa fa-angle-left fa-3x"></i></span>
+            <span>Menu</span>
+        </div>
+        <div class="col-xs-4 navigator-block navigator-block-center">
+            <span>標題</span>
+        </div>
+        <div class="col-xs-4 navigator-block navigator-block-right">
+            <span><i class="fa fa-search fa-1x"></i></span>
+        </div>
+    </nav>  
+    
+    <hr>
+    
+    <nav class="row navigator">
+        <div class="col-xs-12 navigator-block navigator-block-center">
+            <div class="input-group">
+              <input class="form-control" placeholder="type here" style="background-color: transparent;">
+              <span class="input-group-addon"  style="background-color: transparent;"><i class="fa fa-times"></i></span>
+            </div>
+        </div>
+    </nav>  
+    
+    <hr>
+    
+    <nav class="row navigator">
+        <div class="col-xs-4 navigator-block navigator-block-left">
+            <span><i class="fa fa-angle-left fa-3x"></i></span>
+            <span>Menu</span>
+        </div>
+        <div class="col-xs-4 navigator-block navigator-block-center">
+            <span>標題</span>
+        </div>
+        <div class="col-xs-4 navigator-block navigator-block-right">
+            <span>
+                <button class="navbar-toggler r_dropdown-toggler" r_dropdown-toggle-target="#toggleTarget" type="button" >&#9776;</button>
+            </span>
+        </div>
+
+    </nav>
+    <nav class="row">
+        <ul id="toggleTarget" class="r_dropdown r_dropdown-menu r_dropdown-right">
+          <li class="r_dropdown-item"><a href="#">一年級</a></li>
+          <li class="r_dropdown-item"><a href="#">二年級</a></li>
+          <li class="r_dropdown-submenu">
+            <a href="#" class="r_dropdown-submenu-title">三年級</a>
+            <ul class="r_dropdown-menu">
+              <li class="r_dropdown-item"><a href="#">三年一班</a></li>
+              <li class="r_dropdown-submenu">
+                <a href="#" class="r_dropdown-submenu-title">三年二班</a>
+                <ul class="r_dropdown-menu">
+                    <li class="r_dropdown-item"><a href="#">老師8888888888888888 8 8 888888888888888888888888很長</a></li>
+                    <li class="r_dropdown-submenu">
+                      <a href="#" class="r_dropdown-submenu-title">學生</a>
+                      <ul class="r_dropdown-menu">
+                        <li class="r_dropdown-item"><a href="#">功課好的</a></li>
+                        <li class="r_dropdown-submenu">
+                          <a href="#" class="r_dropdown-submenu-title">小麻煩</a>
+                          <ul class="r_dropdown-menu">
+                              <li class="r_dropdown-item"><a href="#">小華</a></li>
+                              <li class="r_dropdown-item"><a href="#">小明</a></li>
+                          </ul>
+                        </li>
+                        <li class="r_dropdown-item"><a href="#">功課差的</a></li>
+                        <li class="r_dropdown-item"><a href="#">功課普通的</a></li>
+                      </ul>
+                    </li>
+                </ul>
+              </li>
+              <li class="r_dropdown-item"><a href="#">三年三班</a></li>
+              <li class="r_dropdown-item"><a href="#">三年四班</a></li>
+            </ul>
+          </li>
+        </ul>
+    </nav>
+
+test<br>
+test<br>
+test<br>
+test<br>
+    
+    
+</div>
+
+</div>
+</body>
+</html>

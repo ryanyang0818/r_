@@ -1,0 +1,3 @@
+﻿$(function () {
+    RR.system.prepare();
+});

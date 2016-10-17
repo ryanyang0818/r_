@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+<link rel="stylesheet" href="../lib/bootstrap-4-dev/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="../css/bootstrap-fixed.css">
+<link rel="stylesheet" href="../css/common.css">
+<link rel="stylesheet" href="../lib/font-awesome-4.6.3/css/font-awesome.min.css">
+
+<link rel="font/opentype" href="../lib/font-awesome-4.6.3/fonts/FontAwesome.otf">
+<link rel="font/opentype" href="../lib/font-awesome-4.6.3/fonts/fontawesome-webfont.eot">
+<link rel="font/opentype" href="../lib/font-awesome-4.6.3/fonts/fontawesome-webfont.svg">
+<link rel="font/opentype" href="../lib/font-awesome-4.6.3/fonts/fontawesome-webfont.ttf">
+<link rel="font/opentype" href="../lib/font-awesome-4.6.3/fonts/fontawesome-webfont.woff">
+<link rel="font/opentype" href="../lib/font-awesome-4.6.3/fonts/fontawesome-webfont.woff2">
+
+<link rel="stylesheet" href="../lib/RUI/css/r_dropdown.css">
+<link rel="stylesheet" href="../lib/RUI/css/r_loader.css">
+<link rel="stylesheet" href="../lib/RUI/css/r_slidepanel.css">
+<link rel="stylesheet" href="../lib/RUI/css/r_toast.css">
+<link rel="stylesheet" href="../lib/RUI/css/r_imgStack.css">
+<link rel="stylesheet" href="../lib/RUI/css/r_pageMgr.css">
+<link rel="stylesheet" href="../lib/RUI/css/r_tooltip.css">
+<link rel="stylesheet" href="../lib/RUI/css/r_PUCKtooltip.css">
+<link rel="stylesheet" href="../lib/RUI/css/r_confirm.css">
+<link rel="stylesheet" href="../lib/RUI/css/r_uploader.css">
+<link rel="stylesheet" href="../lib/RUI/css/bootstrap.fix.css">
+
+<script src="../lib/jquery/jquery-2.2.1.min.js"></script>
+<script src="../lib/jquery-ui-1.12.0.custom/jquery-ui.min.js"></script>
+<script src="../lib/jquery-ui-1.12.0.custom/jquery-fixed.js"></script>
+<script src="../lib/underscore/underscore-min.js"></script>
+<script src="../lib/backbone/backbone-min.js"></script>
+<script src="../lib/tether/tether.min.js"></script>
+<script src="../lib/bootstrap-4-dev/dist/js/bootstrap.min.js"></script>
+<script src="../lib/AjaxQ/ajaxq.js"></script>
+<script src="../lib/jstorage/jstorage.js"></script>
+<script src="../lib/touchSwipe/jquery.touchSwipe.min.js"></script>
+<script src="../lib/fancyBox/source/jquery.fancybox.js"></script>
+<script src="../lib/i18n/jquery.i18n.properties.min.js"></script>
+<script src="../lib/mqttws/mqttws31.js"></script>
+<script src="../lib/crypto-js/aes.js"></script>
+<script src="../lib/crypto-js/base64.js"></script>
+
+<script src="../lib/RR/js/RR.common.js"></script>
+<script src="../lib/RR/js/RR.core.js"></script>
+<script src="../js/RR.system.js"></script>
+<script src="../js/RR.router.js"></script>
+<script src="../lib/RR/js/RR.config.js"></script>
+<script src="../config/js_config.js"></script>
+<script src="../lib/RR/js/RR.util.js"></script>
+<script src="../lib/RR/js/RR.timer.js"></script>
+<script src="../lib/RR/js/RR.pager.js"></script>
+<script src="../lib/RR/js/RR.views.js"></script>
+
+<script src="../lib/RUI/js/r_loader.js"></script>
+<script src="../lib/RUI/js/r_slidepanel.js"></script>
+<script src="../lib/RUI/js/r_toast.js"></script>
+<script src="../lib/RUI/js/r_pageMgr.js"></script>
+<script src="../lib/RUI/js/r_tooltip.js"></script>
+<script src="../lib/RUI/js/r_PUCKtooltip.js"></script>
+<script src="../lib/RUI/js/r_lazyload.js"></script>
+<script src="../lib/RUI/js/r_confirm.js"></script>
+<script src="../lib/RUI/js/r_uploader.js"></script>
+<script src="../lib/RUI/js/r_i18n.js"></script>
+<script src="../lib/RUI/js/r_mqtt.js"></script>
+<script src="../lib/RUI/js/r_mqttHandler.js"></script>
+<script src="../lib/RUI/js/r_playlist.js"></script>
+<script src="../lib/RUI/js/r_progressbar.js"></script>
+<script src="../lib/RUI/js/r_roundProgressbar.js"></script>
+</head>
+<body>
+<div id="WRAPPER_ALL">
+<div class="r_page" data-r_page_name="ixpand" data-role="page" data-page-name="ixpand" class="container-fluid">
+    <nav class="row navigator  m-x-0 originalNavigator" style="display:none;">
+        <div class="col-xs-4 navigator-block navigator-block-left">
+            <span></span>
+        </div>
+        <div class="col-xs-4 navigator-block navigator-block-center">
+        </div>
+        <div class="col-xs-4 navigator-block navigator-block-right">
+        </div>
+    </nav>
+    
+    <nav class="row navigator m-x-0 editModeNavigator" style="display:none;">
+        <div class="col-xs-4 navigator-block navigator-block-left">
+            <span class="closeEditMode"><i class="fa fa-close fa-2x"></i></span>
+        </div>
+        <div class="col-xs-4 navigator-block navigator-block-center">
+            <span class="text selectedNumber"></span>
+        </div>
+        <div class="col-xs-4 navigator-block navigator-block-right">
+            <span class="text selectAll ri18n" data-mode="select" data-ri18n="edit_choose_all"></span>
+        </div>
+    </nav>
+    <nav class="row navigator m-x-0 categoryToolbar">
+        <div class="col-xs-2 navigator-block navigator-block-left">
+        </div>
+        <div class="col-xs-2 navigator-block navigator-block-center photo_button" data-category="photo" style="cursor:pointer;">
+            <span><a href="javascript:;"><i class="category-icon fa fa-picture-o" aria-hidden="true"></i></a></span>
+        </div>
+        <div class="col-xs-2 navigator-block navigator-block-center video_button" data-category="video" style="cursor:pointer;">
+            <span><a href="javascript:;"><i class="category-icon fa fa-video-camera" aria-hidden="true"></i></a></span>
+        </div>
+        <div class="col-xs-2 navigator-block navigator-block-center music_button" data-category="music" style="cursor:pointer;">
+            <span><a href="javascript:;"><i class="category-icon fa fa-music" aria-hidden="true"></i></a></span>
+        </div>
+        <div class="col-xs-2 navigator-block navigator-block-center file_button" data-category="file" style="cursor:pointer;">
+            <span><a href="javascript:;"><i class="category-icon fa fa-folder-o" aria-hidden="true"></i></a></span>
+        </div>
+        <div class="col-xs-2 navigator-block navigator-block-right">
+            <span><a href="javascript:;"><img class="wave"></a></span>
+        </div>
+    </nav>
+
+    <div class="row categoryContainer m-x-0">
+        <div class="innerCategoryContainer">
+
+        </div>
+    </div>
+    
+    <footer class="r_footer footer toolbar-original" style="display:none;">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-4 footer-block">test</div>
+                <div class="col-xs-4 footer-block">test</div>
+                <div class="col-xs-4 footer-block">test</div>
+            </div>
+        </div>
+    </footer>
+    
+</div>
+
+</div>
+</body>
+</html>
